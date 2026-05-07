@@ -1,0 +1,21 @@
+create database db_yasminloja;
+
+create table db_yasminloja.vendas(
+    id_venda int auto_increment primary key,
+    produto varchar(100) not null,
+    quantidade int not null,
+    valor_unitario decimal (10,2) not null,
+    data_venda date not null     
+);
+
+insert into db_yasminloja.vendas (produto, quantidade, valor_unitario, data_venda)
+    values ("computador",2,3000,"2026-04-10"),
+    ("mesa gamer", 3, 2000, "2026-04-11");
+ 
+insert into db_dielmeloja.vendas(produto, quantidade, valor_unitario, data_venda)
+    values("Fone Gamer", 3, 100, "2026-04-11"),
+    ("Mouse gamer", 4, 500, "2026-04-13"),
+    ("TV Gamer", 1, 5000, "2026-04-15");
+ 
+select * from db_yasminloja.vendas;
+ 
