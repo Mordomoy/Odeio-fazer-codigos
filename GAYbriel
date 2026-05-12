@@ -2,32 +2,31 @@ import random
 
 # Lista de frases para o gênero masculino
 frases_masculino = [
-    (0, "Hétero top de mais, Nem um glitter passou perto."),
-    (10, "Só um pezinho na pista... mas ainda nega até o último segundo."),
-    (20, "Curte Lady Gaga em segredo. Tá começando a desconfiar."),
+    (0, "Hétero top de mais, Redpill."),
+    (10, "Só apoia os gays."),
+    (20, "Curte Pablo Vittar, só um segredo né?"),
     (30, "Já quis experimentar os amigos. Só curiosidade, né?"),
-    (40, "Sabe a coreografia de 'Single Ladies'. Coincidência?"),
+    (40, "Sabe a coreografia de 'Single Ladies' e 'Shake It Off'. Coincidência?"),
     (50, "Meio termo: metade arco-íris, metade preto, cinza e branco."),
     (60, "Já foi em uma festa LGBTQIA+ e amou. Tá quase lá!"),
-    (70, "Usa cropped e glitter sem medo. A vibe tá fluindo!"),
-    (80, "Canta Pabllo Vittar no chuveiro e tem playlist de divas pop."),
-    (90, "Já tá dando close certo. Só falta assumir no grupo da família."),
-    (100, "Ícone LGBTQIA+! Brilha mais que a bola de espelhos da boate.")
-]
+    (70, "Usa cropped, glitter e leque lgbt. Mas ainda é bi!"),
+    (80, "Tem uma playlist só de divas pop, faz festa em casa com elas."),
+    (90, "Serving cunt, só falta assumir no grupo da família, mas todo mundo sabe."),
+    (100, "ÍCONE LGBTQIA+! SERVE MESMO DIVVAAAAAAAAAA, INSPIRAÇÕES DOS GAYZINHOS.")
 
 # Lista de frases para o gênero feminino
 frases_feminino = [
-    (0, "Hétero top. Só usa maquiagem para ir ao shopping."),
-    (10, "Só um pezinho na pista... ainda fala que gosta da Bruna Marquezine."),
-    (20, "Curte a Ludmilla em segredo. Tá começando a desconfiar."),
-    (30, "Já deu uma olhadinha na girl da academia. Só curiosidade, né?"),
-    (40, "Sabe a coreografia de 'Single Ladies' e usa cropped sem medo. Coincidência?"),
-    (50, "Meio termo: metade hetero, metade selinho na amiga"),
+    (0, "Hétero top de mais, Redpill."),
+    (10, "Só apoia os gays."),
+    (20, "Curte Pablo Vittar, só um segredo né?"),
+    (30, "Já quis experimentar as amigas. Só um selinho, né?"),
+    (40, "Sabe a coreografia de 'metralhadora' e ouve Ludmilla.  Coincidência?"),
+    (50, "Meio termo: metade arco-íris, metade preto, cinza e branco."),
     (60, "Já foi em uma festa LGBTQIA+ e amou. Tá quase lá!"),
-    (70, "Usa anel de coco sem medo. A vibe tá fluindo!"),
-    (80, "Tem bandeira no quarto."),
-    (90, "Já tá dando close certo. Só falta assumir no grupo da família."),
-    (100, "Ícone LGBTQIA+! Brilha mais que a bola de espelhos da boate.")
+    (70, "Usa cropped, glitter e leque lgbt. Mas ainda é bi!"),
+    (80, "Tem uma playlist só de divas pop, faz festa em casa com elas."),
+    (90, "Serving cunt, só falta assumir no grupo da família, mas todo mundo sabe."),
+    (100, "ÍCONE LGBTQIA+! SERVE MESMO DIVVAAAAAAAAAA, INSPIRAÇÕES DOS GAYZINHOS.")
 ]
 
 # Solicita o nome da pessoa
