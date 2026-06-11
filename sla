@@ -1,0 +1,155 @@
+-- 1. criar o banco de dados
+create database db_loja_online;
+
+-- 2. criar a tabela de clientes
+create table db_loja_online.clientes(
+    id int primary key,
+    nome varchar(100) not null,
+    email varchar(100) not null unique
+);
+
+-- 3. criar a tabela de produtos
+create table db_loja_online.produtos(
+    id int primary key,
+    nome varchar(100) not null,
+    preco decimal(10,2) not null
+);
+
+-- 4. criar a tabela de pedidos
+create table db_loja_online.pedidos(
+    id int primary key,
+    cliente_id int not null,
+    data_pedido date not null,
+    foreign key (cliente_id) references db_loja_online.clientes(id)
+);
+
+-- 5. criar a tabela de itens do pedido
+create table db_loja_online.itens_pedido(
+    id int primary key,
+    pedido_id int not null,
+    produto_id int not null,
+    quantidade int not null,
+    foreign key (pedido_id) references db_loja_online.pedidos(id),
+    foreign key (produto_id) references db_loja_online.produtos(id)
+);
+
+
+
+
+
+-- 6. inserir os dados dos clientes
+insert into db_loja_online.clientes(id, nome, email)
+values (1, "joão silva", "joao@exemplo.com"),
+       (2, "maria oliveira", "maria@exemplo.com"),
+       (3, "pedro santos", "pedro@exemplo.com");
+
+-- 7. inserir os dados dos produtos
+insert into db_loja_online.produtos(id, nome, preco)
+values (1, "camiseta", 29.99),
+       (2, "calça jeans", 79.99),
+       (3, "tênis", 149.99),
+       (4, "jaqueta", 199.99);
+
+-- 8. inserir os dados dos pedidos
+insert into db_loja_online.pedidos(id, cliente_id, data_pedido)
+values (1, 1, "2026-05-15"),
+       (2, 2, "2026-05-20"),
+       (3, 1, "2026-05-25"),
+       (4, 3, "2026-05-27");
+
+-- 9. inserir os dados dos itens dos pedidos
+insert into db_loja_online.itens_pedido(id, pedido_id, produto_id, quantidade)
+values (1, 1, 1, 2),
+       (2, 1, 2, 3),
+       (3, 2, 3, 4),
+       (4, 2, 4, 5),
+       (5, 3, 1, 1),
+       (6, 3, 3, 2),
+       (7, 4, 1, 1),
+       (8, 4, 2, 1);
+
+
+
+
+
+-- 6. inserir os dados dos clientes
+insert into db_loja_online.clientes(id, nome, email)
+values (1, "joão silva", "joao@exemplo.com"),
+       (2, "maria oliveira", "maria@exemplo.com"),
+       (3, "pedro santos", "pedro@exemplo.com");
+
+-- 7. inserir os dados dos produtos
+insert into db_loja_online.produtos(id, nome, preco)
+values (1, "camiseta", 29.99),
+       (2, "calça jeans", 79.99),
+       (3, "tênis", 149.99),
+       (4, "jaqueta", 199.99);
+
+-- 8. inserir os dados dos pedidos
+insert into db_loja_online.pedidos(id, cliente_id, data_pedido)
+values (1, 1, "2026-05-15"),
+       (2, 2, "2026-05-20"),
+       (3, 1, "2026-05-25"),
+       (4, 3, "2026-05-27");
+
+-- 9. inserir os dados dos itens dos pedidos
+insert into db_loja_online.itens_pedido(id, pedido_id, produto_id, quantidade)
+values (1, 1, 1, 2),
+       (2, 1, 2, 3),
+       (3, 2, 3, 4),
+       (4, 2, 4, 5),
+       (5, 3, 1, 1),
+       (6, 3, 3, 2),
+       (7, 4, 1, 1),
+       (8, 4, 2, 1);
+
+
+
+
+-- 10. consultar produtos do joão silva em ordem alfabética
+select pr.nome, ip.quantidade 
+from db_loja_online.clientes c
+join db_loja_online.pedidos p on c.id = p.cliente_id
+join db_loja_online.itens_pedido ip on p.id = ip.pedido_id
+join db_loja_online.produtos pr on ip.produto_id = pr.id
+where c.nome like "joão silva"
+order by pr.nome asc;
+
+
+
+
+-- 11. atualizar nome de calça jeans para calça de couro
+update db_loja_online.produtos 
+set nome = "calça de couro" 
+where nome like "calça jeans";
+
+-- 12. mostrar todos os produtos da tabela produtos
+select * from db_loja_online.produtos;
+
+
+
+
+
+
+-- 13. consulta para mostrar a soma de todos os pedidos da loja
+select sum(ip.quantidade * pr.preco) 
+from db_loja_online.itens_pedido ip
+join db_loja_online.produtos pr on ip.produto_id = pr.id;
+
+
+
+
+
+
+juntar resultados de dois ou mais selects em uma única lista, apagando as linhas repetidas.
+
+
+
+
+-- 14. consulta para contar quantos pedidos o cliente joão silva fez
+select count(p.id) 
+from db_loja_online.pedidos p
+join db_loja_online.clientes c on p.cliente_id = c.id
+where c.nome like "joão silva";
+
+
